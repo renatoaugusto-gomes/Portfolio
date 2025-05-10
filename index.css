@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primaria: #3CB371;
+    --secundaria: #2E8B57;
+    --escuro: #0a0f0c;
+    --maisescuro: #050705;
+    --claro: #f0fdf4;
+    --vidro: rgba(255, 255, 255, 0.07);
+}
+
+
+body{
+    background-color: var(--escuro);
+    color: var(--claro);
+}
+
+.navegacao{
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    padding: 1.5rem 0;
+    background-color: rgba(15, 23, 42, 0.8);
+}
+
+.menu{
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-link{
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.menu-link::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    transition: width 0.5s ease;
+}
+
+.menu-link:hover::after{
+    width: 100%;
+}
+
+
+.cabecalho{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.foto-perfil {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 4px solid var(--vidro);
+    margin-bottom: 1rem;
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+    animation: flutuar 5s ease-in-out infinite;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--primaria);
+    font-weight: bold;
+    margin: 10px;
+}
+
+.cabecalho-sub-titulo {
+    font-size: 1,5rem;
+    color: var(--claro);
+}
+
+.sobre {
+    padding: 6rem 2rem;
+}
+
+.sobre-titulo {
+    font-size: 2.5rem;
+    color: var(--claro);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sobre-caixa {
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid var(--vidro);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(60, 179, 113, 0.2);
+}
+
+.sobre-paragrafo {
+    text-align: justify;
+    font-size: 1rem;
+}
+
+.projetos {
+    padding: 6rem 2rem;
+}
+
+.projetos-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.projetos-card:hover{
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+    transform: translateY(-10px) scale(1.03);
+}
+
+.projetos-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center; /* centraliza os cards menores */
+}
+
+.projetos-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(60, 179, 113, 0.2);
+    overflow: hidden;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.projetos-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.caixa-textos-projetos {
+    padding: 1.5rem;
+}
+
+.info-projetos {
+    margin-bottom: 5px;
+}
+
+.paragrafo-projetos{
+    color: rgba(226, 232, 240, 0.8);
+    line-height: 1.25rem;
+}
+
+.contato {
+    padding: 6rem 2rem;
+}
+
+.contato-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.formulario-contato {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(60, 179, 113, 0.2);
+}
+
+.campo-form {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--claro);
+    border: 1px solid var(--vidro);
+    outline: none;
+}
+
+.campo-form:focus {
+    border-color: var(--secundaria);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+}
+
+.grupo-form {
+    margin-bottom: 1.5rem;
+}
+
+.botao-form {
+    color: var(--claro);
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    font-weight: bold;
+    width: 100%;
+}
+
+.botao-form:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+}
+
+.particula {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: -1;
+    background: 
+    radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%)
+    ;
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/*responsividade*/
+
+/* Responsividade para tablets e celulares */
+@media (max-width: 1024px) {
+    .menu {
+        font-size: large;
+        gap: 2rem;
+    }
+
+    .cabecalho{
+        padding-top: 3rem;
+    }
+
+    .foto-perfil {
+        width: 250px;
+        height: 250px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .cabecalho-sub-titulo {
+        font-size: 1.25rem;
+    }
+
+    .sobre, .projetos, .contato {
+        padding: 3rem 1rem;
+    }
+
+    .projetos-caixa {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .projetos-card {
+        max-width: 100%;
+    }
+
+    .formulario-contato {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .menu {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.5rem;
+    }
+
+    .cabecalho {
+        padding-top: 2.75rem;
+    }
+
+    .foto-perfil {
+        width: 200px;
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .cabecalho-sub-titulo {
+        font-size: 0.75rem;
+        text-align: center;
+    }
+
+    .sobre-caixa {
+        padding: 0.5rem;
+    }
+
+    .formulario-contato {
+        padding: 0.5rem;
+        font-size: 0.25rem;
+    }
+
+    .info-projetos {
+        font-size: 0.75rem;
+    }
+
+    .projetos-titulo,
+    .sobre-titulo,
+    .contato-titulo {
+        font-size: 1rem;
+    }
+
+    .paragrafo-projetos {
+        font-size: 0.5rem;
+    }
+
+    .sobre-paragrafo {
+        font-size: 0.5rem;
+    }
+}
