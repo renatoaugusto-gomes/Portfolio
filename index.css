@@ -268,57 +268,60 @@ h1 {
 
 /*responsividade*/
 
-/* Responsividade para tablets e celulares */
+/* Responsividade para tablets */
 @media (max-width: 1024px) {
     .menu {
-        font-size: large;
+        font-size: 1rem;
         gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .cabecalho{
-        padding-top: 3rem;
+    .cabecalho {
+        padding-top: 4rem;
     }
 
     .foto-perfil {
-        width: 250px;
-        height: 250px;
+        width: 280px;
+        height: 280px;
     }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
     }
 
     .cabecalho-sub-titulo {
         font-size: 1.25rem;
     }
 
-    .sobre, .projetos, .contato {
-        padding: 3rem 1rem;
+    .sobre,
+    .projetos,
+    .contato {
+        padding: 4rem 1.5rem;
     }
 
     .projetos-caixa {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .projetos-card {
-        max-width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
     .formulario-contato {
-        padding: 1.5rem;
+        padding: 2rem;
     }
 }
 
+/* Responsividade para celulares */
 @media (max-width: 600px) {
     .menu {
-        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.85rem;
         gap: 1rem;
-        font-size: 0.5rem;
+        padding: 0.5rem 0;
     }
 
     .cabecalho {
-        padding-top: 2.75rem;
+        padding-top: 5rem;
+        text-align: center;
     }
 
     .foto-perfil {
@@ -327,39 +330,32 @@ h1 {
     }
 
     h1 {
-        font-size: 1.25rem;
-        text-align: center;
+        font-size: 1.75rem;
     }
 
     .cabecalho-sub-titulo {
-        font-size: 0.75rem;
-        text-align: center;
-    }
-
-    .sobre-caixa {
-        padding: 0.5rem;
-    }
-
-    .formulario-contato {
-        padding: 0.5rem;
-        font-size: 0.25rem;
-    }
-
-    .info-projetos {
-        font-size: 0.75rem;
-    }
-
-    .projetos-titulo,
-    .sobre-titulo,
-    .contato-titulo {
         font-size: 1rem;
     }
 
-    .paragrafo-projetos {
-        font-size: 0.5rem;
+    .sobre-titulo,
+    .projetos-titulo,
+    .contato-titulo {
+        font-size: 1.5rem;
     }
 
-    .sobre-paragrafo {
-        font-size: 0.5rem;
+    .sobre-caixa,
+    .formulario-contato {
+        padding: 1rem;
+    }
+
+    .sobre-paragrafo,
+    .paragrafo-projetos,
+    .info-projetos {
+        font-size: 0.875rem;
+    }
+
+    .botao-form {
+        padding: 0.75rem;
+        font-size: 1rem;
     }
 }
